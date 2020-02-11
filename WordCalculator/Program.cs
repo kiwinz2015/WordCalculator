@@ -109,7 +109,7 @@ namespace String_Calculator
             return val;
         }
 
-        public static int nuevo() 
+        public static int masnuevo() 
         {
             return 1;
         }
