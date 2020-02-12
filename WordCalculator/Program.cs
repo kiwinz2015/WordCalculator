@@ -11,7 +11,7 @@ namespace String_Calculator
         static void Main(string[] args)
         {
             var word = "";
-            /*
+            
             //### Step 1
             Console.WriteLine("\n\nStep #1/12 Create a simple string calculator with a method that takes a string and returns a number. :)");
             Console.WriteLine($"Type a word: ");
@@ -34,20 +34,17 @@ namespace String_Calculator
             //### Step 4
             Console.WriteLine($"\n\nStep #4/12 Any amount of numbers returns the sum of those numbers: ");
             Console.WriteLine($"All numbers entered sums = {WordCalc.MultipleSum()}");
-            */
+            
             //### Step 5 & 6 & 9 & 10 & 11
-            Console.WriteLine($"\n\nStep #5/12 New line breaks and commas should be interchangeable between numbers. : ");
+            Console.WriteLine($"\n\nSteps #5, 6, 9, 10, 11, 12: New line breaks and commas should be interchangeable between numbers. : ");
             Console.WriteLine($"Enter a few numbers including line breaks, eg: 1,2\n3 ");
             word = Console.ReadLine();
             Console.WriteLine($"The sum equals to: {WordCalc.SumHandlingDelimiters(word)}");
-
-            /*
-
+            
             //### Step 7 & 8
             Console.WriteLine($"\n\nStep #7/12 Any amount of POSITIVE numbers returns the sum of those numbers: ");
             Console.WriteLine($"All numbers entered sums = {WordCalc.MultiplePositiveSum()}");
-            */
-
+            
 
             //================================ 
             //Console.Write("\nPress any key to exit...");
