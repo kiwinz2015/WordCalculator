@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xunit;
 
 namespace String_Calculator
 {
@@ -54,7 +53,7 @@ namespace String_Calculator
 
     }
 
-    class WordCalc
+    public static class WordCalc
     {
         //### Step 1 
         public static int myWordLength(string word)
