@@ -33,6 +33,7 @@ namespace String_Calculator
 
             //### Step 4
             Console.WriteLine($"\n\nStep #4/12 Any amount of numbers returns the sum of those numbers: ");
+            
             Console.WriteLine($"All numbers entered sums = {WordCalc.MultipleSum()}");
             
             //### Step 5 & 6 & 9 & 10 & 11
@@ -88,7 +89,12 @@ namespace String_Calculator
             }
             while (mynumber != 0);
 
-            return numbs.Sum();
+            return Sum_MultipleNumbers(numbs); // numbs.Sum();
+        }
+
+        public static double Sum_MultipleNumbers(double[] n) 
+        {
+            return n.Sum();
         }
 
         internal static object ReturnMyNumber(bool v)
