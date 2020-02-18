@@ -141,7 +141,7 @@ namespace String_Calculator
             }
             while (mynumber != 0);
 
-            return numbs.Sum();
+            return Sum_MultipleNumbers(numbs); 
         }
     }
 }

@@ -57,9 +57,53 @@ namespace Calculator.Tests
         [Fact]
         public void Test_MultipleSum()
         {
+            //Unit Tests for Step 4
             // Arrange
             int expected = 5;
             double[] array = new double[] { 1, 1, 1, 1, 1, 0 };
+
+            // Act
+            double actual_result = WordCalc.Sum_MultipleNumbers(array);
+
+            // Assert
+            Assert.Equal(expected, actual_result);
+
+        }
+        
+        [Fact]
+        public void Test_SumHandlingDelimiters()
+        {
+            // Arrange
+            int expected = 20;
+            
+            // Act
+            int actual_result = WordCalc.SumHandlingDelimiters("3\n5\n3, 9");
+
+            // Assert
+            Assert.Equal(expected, actual_result);
+
+        }
+
+        [Fact]
+        public void Test_SumHandlingDelimiters_Step6()
+        {
+            // Arrange
+            int expected = 3;
+
+            // Act
+            int actual_result = WordCalc.SumHandlingDelimiters("//;\n1;2");
+
+            // Assert
+            Assert.Equal(expected, actual_result);
+
+        }
+
+        [Fact]
+        public void Test_SumHandlingDelimiters_Steps7And8()
+        {
+            // Arrange
+            int expected = 1051;
+            double[] array = new double[]{1, 50, 999, 1, 0};
 
             // Act
             double actual_result = WordCalc.Sum_MultipleNumbers(array);
