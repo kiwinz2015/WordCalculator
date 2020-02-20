@@ -38,7 +38,6 @@ namespace Calculator.Tests
             Assert.Equal(expected, actual_result);
 
         }
-
         
         [Fact]
         public void Test_myWordLength()
@@ -77,7 +76,7 @@ namespace Calculator.Tests
             int expected = 20;
             
             // Act
-            int actual_result = WordCalc.SumHandlingDelimiters("3\n5\n3, 9");
+            int actual_result = WordCalc.SumHandlingDelimiters("3\n5\n3, 9",0);
 
             // Assert
             Assert.Equal(expected, actual_result);
@@ -91,7 +90,7 @@ namespace Calculator.Tests
             int expected = 3;
 
             // Act
-            int actual_result = WordCalc.SumHandlingDelimiters("//;\n1;2");
+            int actual_result = WordCalc.SumHandlingDelimiters("//;\n1;2",0);
 
             // Assert
             Assert.Equal(expected, actual_result);
@@ -99,7 +98,7 @@ namespace Calculator.Tests
         }
 
         [Fact]
-        public void Test_SumHandlingDelimiters_Steps7And8()
+        public void Test_SumHandlingDelimiters_Steps4()
         {
             // Arrange
             int expected = 1051;
@@ -110,8 +109,35 @@ namespace Calculator.Tests
 
             // Assert
             Assert.Equal(expected, actual_result);
-
         }
 
+        [Fact]
+        public void Test_SumHandlingDelimiters_Steps7()
+        {
+            // Arrange
+            int expected = 2050;
+            double[] array = new double[] { 1, 50, 999, 1000, 0 };
+
+            // Act
+            double actual_result = WordCalc.Sum_MultipleNumbers(array);
+
+            // Assert
+            Assert.Equal(expected, actual_result);
+        }
+
+        [Fact]
+        public void Test_SumHandlingDelimiters_Steps8()
+        {
+            // Arrange
+            int expected = 948;
+            double[] array = new double[] { -1, -50, 999 };
+
+            // Act
+            double actual_result = WordCalc.Sum_MultipleNumbers(array);
+
+            // Assert
+            Assert.Equal(expected, actual_result);
+        }
+                
     }
 }
