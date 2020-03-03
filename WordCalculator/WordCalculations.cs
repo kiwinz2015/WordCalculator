@@ -12,7 +12,7 @@ namespace String_Calculator
         {
             var word = "";
 
-            /*
+            /**
             //### Step 1
             int Step1 = WordCalc.myWordLength("Hi, there!");
             //### Step 2
@@ -37,11 +37,9 @@ namespace String_Calculator
             sumHandleDelimiters = WordCalc.SumHandlingDelimiters("//[***][#][%]\n1***2#3%4",11);
             //### Step 12
             sumHandleDelimiters = WordCalc.SumHandlingDelimiters("//[*1*][%]\n1*1*2%3",12);
-            */
-
-
+            **/
+            
             //### Step 1
-
             Console.WriteLine("Step #1 > Create a simple string calculator with a method that takes a string and returns a number.");
             int result = WordCalc.add("Hi, there!",1);
             //### Step 2
@@ -59,9 +57,9 @@ namespace String_Calculator
             Console.WriteLine("Step #6 > Support different delimiters - to change a delimiter, the beginning of the string will contain a separate line");
             result = WordCalc.add("//;\n1;2", 6);
             //### Step 7
-            Console.WriteLine($"All numbers entered sums = {WordCalc.MultiplePositiveSum(7)}");
+            Console.WriteLine($"All numbers entered sums = {WordCalc.MultiplePositiveSum(7)}\n");
             //### Step 8
-            Console.WriteLine($"All numbers entered sums = {WordCalc.MultiplePositiveSum(8)}");
+            Console.WriteLine($"All numbers entered sums = {WordCalc.MultiplePositiveSum(8)}\n");
             //### Step 9 
             Console.WriteLine("Step #9 > Delimiters can be of any length with the following format.");
             result = WordCalc.add("//[***]\n1***2***3", 9);
@@ -217,8 +215,8 @@ namespace String_Calculator
             }
             else if (step == 8)
             {
-                Console.WriteLine($"\n\nStep #{step} Numbers greater or equal to 1000 should be ignored: ");
-                Console.WriteLine($"Enter numbers OR Press 0 to Exit:");
+                Console.WriteLine($"\n\nStep #{step} Insert numbers up to 999, Numbers greater or equal to 1000 should be ignored: ");
+                Console.WriteLine($"Enter numbers OR Press Zero (0) to Exit:");
                 do
                 {
                     mynumber = Convert.ToDouble(Console.ReadLine());
@@ -229,7 +227,7 @@ namespace String_Calculator
                     }
                     else
                     {
-                        Console.WriteLine($"Numbers greater than 999 are not allowed. You've entered:{mynumber}");
+                        Console.WriteLine($"Numbers greater than 999 are not allowed. You've entered:{mynumber}\n");
                     }
                 }
                 while (mynumber != 0);
