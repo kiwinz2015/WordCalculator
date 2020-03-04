@@ -8,9 +8,33 @@ using Xunit;
 
 namespace Calculator.Tests
 {
+    public class Calculator
+    {
+        public int Calcualte(string input)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     public class CalculatorUnitTests
     {
+
+        [Fact]
+        public void SingleNumbers()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calcualte("1");
+            Assert.Equal(1, result);
+        }
+        
+        [Fact]
+        public void AddTwoNumbers()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calcualte(" 1,2");
+            Assert.Equal(3, result);
+        }
+
         [Fact]
         public void Add_TwoNumbers()
         {
