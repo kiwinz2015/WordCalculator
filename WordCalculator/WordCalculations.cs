@@ -38,40 +38,42 @@ namespace String_Calculator
             //### Step 12
             sumHandleDelimiters = WordCalc.SumHandlingDelimiters("//[*1*][%]\n1*1*2%3",12);
             **/
-            
+
+            var calculator = new WordCalc();
+
             //### Step 1
             Console.WriteLine("Step #1 > Create a simple string calculator with a method that takes a string and returns a number.");
-            int result = WordCalc.add("Hi, there!",1);
+            int result = calculator.add("Hi, there!",1);
             //### Step 2
-            double result2 = WordCalc.ReturnMyNumber(33);
+            int result2 = calculator.ReturnMyNumber(33);
             //### Step 3
             Console.WriteLine("Step #3 > Two numbers return the sum of the numbers.");
-            result = WordCalc.add("12", 3);
+            result = calculator.add("12", 3);
             //### Step 4
             Console.WriteLine("Step #4 > Any amount of numbers returns the sum of those numbers.");
-            result = WordCalc.add("3,5,3,9", 4);
+            result = calculator.add("3,5,3,9", 4);
             //### Step 5 
             Console.WriteLine("Step #5 > New line breaks and commas should be interchangeable between numbers.");
-            result = WordCalc.add("3\n5\n3,9", 5);
+            result = calculator.add("3\n5\n3,9", 5);
             //### Step 6 
             Console.WriteLine("Step #6 > Support different delimiters - to change a delimiter, the beginning of the string will contain a separate line");
-            result = WordCalc.add("//;\n1;2", 6);
+            result = calculator.add("//;\n1;2", 6);
             //### Step 7
-            Console.WriteLine($"All numbers entered sums = {WordCalc.MultiplePositiveSum(7)}\n");
+            Console.WriteLine($"All numbers entered sums = {calculator.MultiplePositiveSum(7)}\n");
             //### Step 8
-            Console.WriteLine($"All numbers entered sums = {WordCalc.MultiplePositiveSum(8)}\n");
+            Console.WriteLine($"All numbers entered sums = {calculator.MultiplePositiveSum(8)}\n");
             //### Step 9 
             Console.WriteLine("Step #9 > Delimiters can be of any length with the following format.");
-            result = WordCalc.add("//[***]\n1***2***3", 9);
+            result = calculator.add("//[***]\n1***2***3", 9);
             //### Step 10 
             Console.WriteLine("Step #10 > Allow multiple delimiters...  ");
-            result = WordCalc.add("//[*][%]\n1*2%3", 10);
+            result = calculator.add("//[*][%]\n1*2%3", 10);
             //### Step 11
             Console.WriteLine("Step #11 > Handle multiple delimiters with a length longer than one character.");
-            result = WordCalc.add("//[***][#][%]\n1***2#3%4", 11);
+            result = calculator.add("//[***][#][%]\n1***2#3%4", 11);
             //### Step 12
             Console.WriteLine("Step #12 > Handle delimiters that have numbers as part of them, where the number cannot be on the edge of a delimiter.");
-            result = WordCalc.add("//[*1*][%]\n1*1*2%3", 12);
+            result = calculator.add("//[*1*][%]\n1*1*2%3", 12);
 
             Console.WriteLine("\n\n THAT'S IT...............\n\n");
             //Console.ReadKey(true);
@@ -79,10 +81,10 @@ namespace String_Calculator
 
     }
 
-    public static class WordCalc
+    public class WordCalc
     {
         //### Step 1 
-        public static int myWordLength(string word)
+        private int myWordLength(string word)
         {
             Console.WriteLine("\n\nStep #1/12 Create a simple string calculator with a method that takes a string and returns a number. :)");
             Console.WriteLine($"The string is:{word}\n");
@@ -94,7 +96,7 @@ namespace String_Calculator
         }
 
         //### Step 2
-        public static double ReturnMyNumber(double number)
+        public int ReturnMyNumber(int number)
         {   Console.WriteLine($"Step #2/12 A single number returns that number \nType a number: ");
             //double a = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"Your number is:{number}\n");
@@ -102,24 +104,24 @@ namespace String_Calculator
         }
 
         //## Step 3 
-        public static double SimpleSum(double a, double b)
+        private int SimpleSum(int a, int b)
         {
             Console.WriteLine($"\n\nStep #3/12 Two numbers return the sum of the numbers: ");
             //Console.WriteLine($"Enter operator A:");
             //double a = Convert.ToDouble(Console.ReadLine());
             //Console.WriteLine($"Enter operator B:");
             //double b = Convert.ToDouble(Console.ReadLine());
-            double res = a + b;
+            int res = a + b;
             Console.WriteLine($"{a} + {b} = {res}");
             return res;
         }
 
-        public static double MultipleSum()
+        private double MultipleSum()
         {
             Console.WriteLine($"\n\nStep #4/12 Any amount of numbers returns the sum of those numbers: ");
             //Console.WriteLine($"All numbers entered sums = {WordCalc.MultipleSum()}");
-            double mynumber = new double();
-            double[] numbs = new double[100];
+            int mynumber = new int();
+            int[] numbs = new int[100];
             int i = 0;
             //Console.WriteLine($"Enter numbers OR Press 0 to Exit:");
 
@@ -135,17 +137,17 @@ namespace String_Calculator
             return Sum_MultipleNumbers(numbs); // numbs.Sum();
         }
 
-        public static double Sum_MultipleNumbers(double[] n) 
+        private int Sum_MultipleNumbers(int[] n) 
         {
             return n.Sum();
         }
 
-        internal static object ReturnMyNumber(bool v)
+        private object ReturnMyNumber(bool v)
         {
             throw new NotImplementedException();
         }
 
-        public static int SumHandlingDelimiters(string a,int step)
+        private int SumHandlingDelimiters(string a,int step)
         {
             Console.WriteLine($"\n\nSteps #{step}: New line breaks and commas should be interchangeable between numbers. : ");
             Console.WriteLine($"The string is:{a}");
@@ -166,7 +168,7 @@ namespace String_Calculator
             return val;
         }
 
-        public static int add(string a, int step)
+        public int add(string a, int step)
         {
             Console.WriteLine($"The string is: '{a}'");
             //Console.WriteLine($"Enter a few numbers including line breaks, eg: 1,2\\n3 ");
@@ -188,11 +190,11 @@ namespace String_Calculator
             return val;
         }
 
-        public static double MultiplePositiveSum(int step)
+        public int MultiplePositiveSum(int step)
         {
 
-            double mynumber;
-            double[] numbs = new double[100];
+            int mynumber;
+            int[] numbs = new int[100];
             int i = 0;
 
             if (step == 7)
@@ -200,7 +202,7 @@ namespace String_Calculator
                 Console.WriteLine($"\n\nStep #{step} Any amount of POSITIVE numbers returns the sum of those numbers: ");
                 do
                 {
-                    mynumber = Convert.ToDouble(Console.ReadLine());
+                    mynumber = Convert.ToInt16(Console.ReadLine());
                     if (mynumber >= 0 )
                     {
                         numbs[i] = mynumber;
@@ -219,7 +221,7 @@ namespace String_Calculator
                 Console.WriteLine($"Enter numbers OR Press Zero (0) to Exit:");
                 do
                 {
-                    mynumber = Convert.ToDouble(Console.ReadLine());
+                    mynumber = Convert.ToInt16(Console.ReadLine());
                     if (mynumber < 1000)
                     {
                         numbs[i] = mynumber;
